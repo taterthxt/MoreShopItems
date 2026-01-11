@@ -11,8 +11,9 @@ using MoreShopItems.Config;
 
 namespace MoreShopItems
 {
-	[BepInPlugin("Jettcodey.MoreShopItems", "More Shop Items", "3.2.2")]
+	[BepInPlugin(MyPluginInfo.PLUGIN_GUID, MyPluginInfo.PLUGIN_NAME, MyPluginInfo.PLUGIN_VERSION)]
 	[BepInDependency("bulletbot.moreupgrades", BepInDependency.DependencyFlags.SoftDependency)]
+	[BepInDependency("MrBytesized.REPO.BetterTeamUpgrades",  BepInDependency.DependencyFlags.SoftDependency)]
 	[BepInDependency("Empress.Empress_SharedUpgrades", BepInDependency.DependencyFlags.SoftDependency)]
 	public class Plugin : BaseUnityPlugin
 	{
@@ -20,7 +21,7 @@ namespace MoreShopItems
 		internal static new ManualLogSource? Logger { get; private set; }
 		internal static GameObject? CustomItemShelf;
 
-		private readonly Harmony _harmony = new Harmony("MoreShopItems");
+		private readonly Harmony _harmony = new Harmony(MyPluginInfo.PLUGIN_GUID);
 
 		internal Dictionary<string, ConfigEntry<int>> intConfigEntries = new Dictionary<string, ConfigEntry<int>>();
 		internal Dictionary<string, ConfigEntry<bool>> boolConfigEntries = new Dictionary<string, ConfigEntry<bool>>();

@@ -53,7 +53,7 @@ namespace MoreShopItems
 			}			
 
 			Plugin.Logger.LogInfo($"Incompatible plugin(s) detected: {string.Join(", ", IncompatibleGuids.Where(g => Chainloader.PluginInfos.ContainsKey(g)))}.");
-			_patcher = new Harmony("MoreShopItems.SplashBlock");
+			_patcher = new Harmony((MyPluginInfo.PLUGIN_GUID) + "SplashBlock");
 			_patcher.PatchAll();
 			BlockSplashSkip = true;
 		}
@@ -92,7 +92,7 @@ namespace MoreShopItems
 				MethodInfo prefixMethod = SymbolExtensions.GetMethodInfo(() => BlockModAUpdate());
 
 				// New ID for this Patch
-				Harmony modAPatcher = new Harmony("MoreShopItems.ModAFix");
+				Harmony modAPatcher = new Harmony((MyPluginInfo.PLUGIN_GUID) + "ModAFix");
 				modAPatcher.Patch(targetMethod, prefix: new HarmonyMethod(prefixMethod));
 			}
 			catch (Exception ex)
@@ -192,15 +192,17 @@ namespace MoreShopItems
 				"- Unpredictable Game behavior and Game instability\n" +
 				"- Corrupted Save files and Game crashes\n\n" +
 				"You MUST disable / uninstall the listed mods above to use MoreShopItems without issues!\n" +
-				"Compatible and recommended mods to use with MoreShopItems instead:\n" +
+				"Compatible and recommended mods to use with MoreShopItems instead:\n\n" +
+				"- BetterTeamUpgrades by MrBytesized\n" +
+				"OR\n" +
 				"- Empress SharedUpgrades by Omniscye\n\n" +
 				"Choose how you want to proceed:";
 
 			// Buttons container anchored
 			var buttons = CreateUIObject("Buttons", panel.transform);
 			var buttonsRt = buttons.GetComponent<RectTransform>();
-			buttonsRt.anchorMin = new Vector2(0.05f, 0.08f);
-			buttonsRt.anchorMax = new Vector2(0.95f, 0.26f);
+			buttonsRt.anchorMin = new Vector2(0.05f, 0.02f);
+			buttonsRt.anchorMax = new Vector2(0.95f, 0.20f);
 			buttonsRt.offsetMin = Vector2.zero;
 			buttonsRt.offsetMax = Vector2.zero;
 			buttonsRt.localScale = Vector3.one;
@@ -216,18 +218,18 @@ namespace MoreShopItems
 			var quitRt = quitBtn.GetComponent<RectTransform>();
 
 			// Anchor each button inside buttons container
-			disableRt.anchorMin = new Vector2(0.02f, 0.1f);
-			disableRt.anchorMax = new Vector2(0.32f, 0.9f);
+			disableRt.anchorMin = new Vector2(0.02f, 0.2f);
+			disableRt.anchorMax = new Vector2(0.32f, 0.8f);
 			disableRt.offsetMin = Vector2.zero;
 			disableRt.offsetMax = Vector2.zero;
 
-			continueRt.anchorMin = new Vector2(0.34f, 0.1f);
-			continueRt.anchorMax = new Vector2(0.66f, 0.9f);
+			continueRt.anchorMin = new Vector2(0.34f, 0.2f);
+			continueRt.anchorMax = new Vector2(0.66f, 0.8f);
 			continueRt.offsetMin = Vector2.zero;
 			continueRt.offsetMax = Vector2.zero;
 
-			quitRt.anchorMin = new Vector2(0.68f, 0.1f);
-			quitRt.anchorMax = new Vector2(0.98f, 0.9f);
+			quitRt.anchorMin = new Vector2(0.68f, 0.2f);
+			quitRt.anchorMax = new Vector2(0.98f, 0.8f);
 			quitRt.offsetMin = Vector2.zero;
 			quitRt.offsetMax = Vector2.zero;
 
@@ -266,7 +268,7 @@ namespace MoreShopItems
 		{
 			try
 			{
-				Harmony.UnpatchID("MoreShopItems");
+				Harmony.UnpatchID(MyPluginInfo.PLUGIN_GUID);
 			}
 			catch (Exception ex)
 			{
