@@ -13,6 +13,7 @@ namespace MoreShopItems
 {
 	[BepInPlugin(MyPluginInfo.PLUGIN_GUID, MyPluginInfo.PLUGIN_NAME, MyPluginInfo.PLUGIN_VERSION)]
 	[BepInDependency("bulletbot.moreupgrades", BepInDependency.DependencyFlags.SoftDependency)]
+	[BepInDependency("HeroHanex.NoItemSpawnLimit",BepInDependency.DependencyFlags.SoftDependency)]
 	[BepInDependency("MrBytesized.REPO.BetterTeamUpgrades",  BepInDependency.DependencyFlags.SoftDependency)]
 	[BepInDependency("Empress.Empress_SharedUpgrades", BepInDependency.DependencyFlags.SoftDependency)]
 	public class Plugin : BaseUnityPlugin
@@ -113,6 +114,7 @@ namespace MoreShopItems
 			boolConfigEntries.Add("Spawn Additional Shelving", ConfigHelper.CreateConfig("General", "Spawn Additional Shelving", true, configDescriptions[22], -1, -1));
 			// boolConfigEntries.Add("Use Game Default Spawn Amounts", ConfigHelper.CreateConfig("General", "Vanilla Spawn Amounts", false, configDescriptions[30], -1, -1));
 			boolConfigEntries.Add("Item Spawn Logs", ConfigHelper.CreateConfig("Dev General", "Item Spawn Logs", false, configDescriptions[31], -1, -1));
+			boolConfigEntries.Add("No Shop Damage", ConfigHelper.CreateConfig("General", "No Shop Damage", false, configDescriptions[32], -1, -1));
 		}
 	}
 }

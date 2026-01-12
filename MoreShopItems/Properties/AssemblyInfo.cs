@@ -16,5 +16,5 @@ using System.Security.Permissions;
 
 [assembly: Guid("b52829e7-88b6-4158-ba1b-23566c7cf06b")]
 
-[assembly: AssemblyVersion("3.2.3")]
-[assembly: AssemblyFileVersion("3.2.3")]
+[assembly: AssemblyVersion("3.2.4")]
+[assembly: AssemblyFileVersion("3.2.4")]

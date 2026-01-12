@@ -12,7 +12,7 @@ namespace MoreShopItems.Config
 {
 	public static class ConfigEntries
 	{
-		private static string[] DESCRIPTIONS = new string[32]
+		private static string[] DESCRIPTIONS = new string[33]
 		{
 			"How many of each upgrade to spawn in the shop.",
 			"How many upgrades you can purchase total. Set 0 to disable",
@@ -46,6 +46,7 @@ namespace MoreShopItems.Config
 			"How many Tools you can purchase total. Set 0 to disable",
 			"Use Game Default Spawn Amounts for all items instead of the configured amounts.", // not done yet
 			"Enable logging of the potential items Spawning in the shop.",
+			"Players take no Damage in the Shop.",
 		};
 
 		public static string[] GetConfigDescriptions() => ConfigEntries.DESCRIPTIONS;
