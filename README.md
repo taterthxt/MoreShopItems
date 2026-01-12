@@ -1,5 +1,11 @@
 ## MoreShopItems Updated
 
+> [!NOTE]
+> This is a fork of [InfusedGalaxy´s MoreShopItems repository](https://github.com/InfusedGalaxy/MoreShopItems).\
+> It was made because [InfusedGalaxy](https://github.com/InfusedGalaxy) seems to have abandoned the mod and made his repositories private.\
+> I'm updating this mod independently for personal use/needs.\
+> Full credit for creating this mod goes to [InfusedGalaxy](https://github.com/InfusedGalaxy).
+
 InfusedGalaxy´s **MoreShopItems** Fork & Updated and it´s Code made Fully Open Source!
 
 ### Report bugs/Feature Requests
