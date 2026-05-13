@@ -143,7 +143,7 @@ namespace MoreShopItems
 		[HarmonyPatch("ShopInitialize")]
 		private static void AdjustItems()
 		{
-			if (!(RunManager.instance.levelCurrent.ResourcePath == "Shop") || !(StatsManager.instance != null) || !SemiFunc.IsMasterClient() && SemiFunc.IsMultiplayer())
+			if (!(RunManager.instance.levelIsShop) || !(StatsManager.instance != null) || !SemiFunc.IsMasterClient() && SemiFunc.IsMultiplayer())
 				return;
 
 			Dictionary<string, ConfigEntry<int>> intConfigEntries = Plugin.Instance.intConfigEntries;
@@ -314,7 +314,7 @@ namespace MoreShopItems
 		[HarmonyPatch("ShopInitialize")]
 		private static void SpawnShelf()
 		{
-			if (!(RunManager.instance.levelCurrent.ResourcePath == "Shop") || !Plugin.Instance.boolConfigEntries["Spawn Additional Shelving"].Value)
+			if (!(RunManager.instance.levelIsShop) || !Plugin.Instance.boolConfigEntries["Spawn Additional Shelving"].Value)
 				return;
 
 			ShelfEventListener.Ensure();
